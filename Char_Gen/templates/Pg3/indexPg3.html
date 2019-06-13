@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+    {% block content3 %}
+
+        <a href={% url 'index1' %}><button>Start Over??</button></a>
+
+        <h1>This page should just display the list of already created Chars, the Chars should be clickable, and when clicked on they should display! This should also have a button to start over!</h1>
+
+        <a href={% url 'index1' %}><button>Pg1?</button></a>
+        <a href={% url 'index2' %}><button>Pg2?</button></a>
+
+    {% endblock content3 %}
