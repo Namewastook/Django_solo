@@ -9,9 +9,15 @@ class Races(models.Model):
     halfling = models.CharField(max_length=30),
     human = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.name
+
 
 class Classes(models.Model):
     cleric = models.CharField(max_length=30),
     fighter = models.CharField(max_length=30),
     rogue = models.CharField(max_length=30),
     wizard = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name

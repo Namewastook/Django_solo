@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Races, Classes
 
-# Register your models here.
+admin.site.register(Races)
+admin.site.register(Classes)
