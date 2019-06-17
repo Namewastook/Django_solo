@@ -2,187 +2,139 @@
 
 {% block content %}
 
-<button type="button" class="btn btn-warning" onClick="myFunction()" >Design your own Character</button>
+<button type="button" class="btn btn-warning" onClick="myFunction()">Design your own Character</button>
 <br>
 <div id= "myDIV" style= "display: none;">
 <br>
-<p>Note! This feature is for more advanced players who do not mind going through all the steps to create a Character from scratch. If you are just looking to grab a Character and go play, please use the random option! If you do not select a value, it will be chosen at random!</p>
+<form action="{% url 'created_char' %}" method="POST">
+{% csrf_token %}
+<p>Note! This feature is for more advanced players who do not mind going through all the steps to create a Character from scratch. If you are just looking to grab a Character and go play, please use the random option! If you do not select a value, the default listed value will be used!</p>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Please select your race:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="race1">Dwarf</option>
-    <option value="race2">Elf</option>
-    <option value="race3">Half-Elf</option>
-    <option value="race4">Half-Orc</option>
-    <option value="race5">Halfling</option>
-    <option value="race6">Human</option>
-    <option value="race7"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="race">
+    <option value="Dwarf" selected="selected">Dwarf</option>
+    <option value="Elf">Elf</option>
+    <option value="Half-Elf">Half-Elf</option>
+    <option value="Half-Orc">Half-Orc</option>
+    <option value="Halfling">Halfling</option>
+    <option value="Human">Human</option>
 
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Please select your class:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="class1">Cleric</option>
-    <option value="class2">Fighter</option>
-    <option value="class3">Rogue</option>
-    <option value="class4">Wizard</option>
-    <option value="class5"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="classes">
+    <option value="Cleric" selected="selected">Cleric</option>
+    <option value="Fighter">Fighter</option>
+    <option value="Rogue">Rogue</option>
+    <option value="Wizard">Wizard</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Str score:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="str1">3</option>
-    <option value="str2">4</option>
-    <option value="str3">5</option>
-    <option value="str4">6</option>
-    <option value="str5">7</option>
-    <option value="str6">8</option>
-    <option value="str7">9</option>
-    <option value="str8">10</option>
-    <option value="str9">11</option>
-    <option value="str10">12</option>
-    <option value="str11">13</option>
-    <option value="str12">14</option>
-    <option value="str13">15</option>
-    <option value="str14">16</option>
-    <option value="str15">17</option>
-    <option value="str16">18</option>
-    <option value="str17"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="strength">
+    <option value="10" selected="selected">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Dex score:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="dex1">3</option>
-    <option value="dex2">4</option>
-    <option value="dex3">5</option>
-    <option value="dex4">6</option>
-    <option value="dex5">7</option>
-    <option value="dex6">8</option>
-    <option value="dex7">9</option>
-    <option value="dex8">10</option>
-    <option value="dex9">11</option>
-    <option value="dex10">12</option>
-    <option value="dex11">13</option>
-    <option value="dex12">14</option>
-    <option value="dex13">15</option>
-    <option value="dex14">16</option>
-    <option value="dex15">17</option>
-    <option value="dex16">18</option>
-    <option value="dex17"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="dexterity">
+    <option value="10" selected="selected">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Con score:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="con1">3</option>
-    <option value="con2">4</option>
-    <option value="con3">5</option>
-    <option value="con4">6</option>
-    <option value="con5">7</option>
-    <option value="con6">8</option>
-    <option value="con7">9</option>
-    <option value="con8">10</option>
-    <option value="con9">11</option>
-    <option value="con10">12</option>
-    <option value="con11">13</option>
-    <option value="con12">14</option>
-    <option value="con13">15</option>
-    <option value="con14">16</option>
-    <option value="con15">17</option>
-    <option value="con16">18</option>
-    <option value="con17"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="constitution">
+    <option value="10" selected="selected">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Int score:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="int1">3</option>
-    <option value="int2">4</option>
-    <option value="int3">5</option>
-    <option value="int4">6</option>
-    <option value="int5">7</option>
-    <option value="int6">8</option>
-    <option value="int7">9</option>
-    <option value="int8">10</option>
-    <option value="int9">11</option>
-    <option value="int10">12</option>
-    <option value="int11">13</option>
-    <option value="int12">14</option>
-    <option value="int13">15</option>
-    <option value="int14">16</option>
-    <option value="int15">17</option>
-    <option value="int16">18</option>
-    <option value="int17"selected="selected">Random</option>
-
+    <select class="custom-select my-1 mr-sm-2" name="intelligence">
+    <option value="10" selected="selected">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Wis score:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="wis1">3</option>
-    <option value="wis2">4</option>
-    <option value="wis3">5</option>
-    <option value="wis4">6</option>
-    <option value="wis5">7</option>
-    <option value="wis6">8</option>
-    <option value="wis7">9</option>
-    <option value="wis8">10</option>
-    <option value="wis9">11</option>
-    <option value="wis10">12</option>
-    <option value="wis11">13</option>
-    <option value="wis12">14</option>
-    <option value="wis13">15</option>
-    <option value="wis14">16</option>
-    <option value="wis15">17</option>
-    <option value="wis16">18</option>
-    <option value="wis17"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="wisdom">
+    <option value="10" selected="selected">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Cha score:</button>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-    <option value="cha1">3</option>
-    <option value="cha2">4</option>
-    <option value="cha3">5</option>
-    <option value="cha4">6</option>
-    <option value="cha5">7</option>
-    <option value="cha6">8</option>
-    <option value="cha7">9</option>
-    <option value="cha8">10</option>
-    <option value="cha9">11</option>
-    <option value="cha10">12</option>
-    <option value="cha11">13</option>
-    <option value="cha12">14</option>
-    <option value="cha13">15</option>
-    <option value="cha14">16</option>
-    <option value="cha15">17</option>
-    <option value="cha16">18</option>
-    <option value="cha17"selected="selected">Random</option>
+    <select class="custom-select my-1 mr-sm-2" name="charisma">
+    <option value="10" selected="selected">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
   </select>
 </div>
 <br>
 <br>
-<a href={% url 'index2' %}><button type="button" class="btn btn-success">Roll character using selected settings</button></a>
+<a href={% url 'created_char' %}><button type="submit" class="btn btn-success">Roll character using selected settings</button></a>
+</form>
 </div>
 <br>
 <br>
-<a href={% url 'index2' %}><button type="button" class="btn btn-primary">Create random character</button></a>
+<form action={% url 'verify_data' %} method="POST">
+{% csrf_token %}
+<a href={% url 'verify_data' %}><button type="submit" class="btn btn-primary">Create random character</button></a>
+</form>
 <br>
 <a href={% url 'index3' %}><button type="button" class="btn btn-dark">View Previously Created Characters</button></a> 
 <br>
-    <a href={% url 'index2' %}><button>Pg2?</button></a>
-    <a href={% url 'index3' %}><button>Pg3?</button></a> 
-
 <script>
 function myFunction() {
   const x = document.getElementById("myDIV");
@@ -192,9 +144,6 @@ function myFunction() {
     x.style.display = "none";
   }
 }
-</script>
-<script>
-
 </script>
 
 {% endblock content %}

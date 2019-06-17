@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import Races, Classes
+from .models import Character
 
-admin.site.register(Races)
-admin.site.register(Classes)
+admin.site.register(Character)

@@ -2,12 +2,38 @@
 
 {% block content2 %}
 
+<form>
+{% csrf_token %}
+<h1>Your Character:</h1>
+<table>
+<th>
+        
+        <tr>Race: {{ char.race }}</tr>
+        <br>
+        <tr>Class: {{char.classes}}</tr>
+        <br>
+        <tr>Str: {{char.strength}}</tr>
+        <br>
+        <tr>Dex: {{char.dexterity}}</tr>
+        <br>
+        <tr>Con: {{char.constitution}}</tr>
+        <br>
+        <tr>Int: {{char.intelligence}}</tr>
+        <br>
+        <tr>Wis: {{char.wisdom}}</tr>
+        <br>
+        <tr>Cha: {{char.charisma}}</tr>
+        <br>
+</tr>
+</table>
 
-<button>Reroll Charactor?</button>
-<button>Save Charactor?</button>
+</form>
+<form action={% url 'verify_data' %} method="POST">
+{% csrf_token %}
+<button type="submit" class="btn btn-primary">Reroll charactor?</button>
+</form>
+<a href={% url 'index3' %}><button>Save Charactor?</button></a>
 <a href="{% url 'index1' %}"><button>Start Over??</button></a>
 <br>
-        <a href="{% url 'index1' %}"><button>Pg1?</button></a>
-        <a href="{% url 'index3' %}"><button>Pg3?</button></a> 
 
-{% endblock content2 %}</a>
+{% endblock content2 %}
