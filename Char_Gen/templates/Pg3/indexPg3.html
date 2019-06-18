@@ -1,8 +1,29 @@
 {% extends 'base.html' %}
 
     {% block content3 %}
+    {% comment %} <table>
+        <thead>
+            <th>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table> {% endcomment %}
 
-        <a href={% url 'index1' %}><button>Start Over??</button></a>
+    <table>
+        <th>
+            <ol>
+                {% for char in chars %}
+            <li class="text">{{ char}}</li>
+                {% endfor %}
+            </ol>
+        </th>
+    </table>
+    
+        <a href={% url 'index1' %}><button class="btn btn-secondary" >Back to the generator.</button></a>
 
-        <h1>This page should just display the list of already created Charactors, the Charactors should be clickable, and when clicked on they should display! This should also have a button to start over!</h1>
     {% endblock content3 %}

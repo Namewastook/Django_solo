@@ -1,14 +1,17 @@
 {% extends 'base.html' %} 
 
 {% block content %}
+{% load static %}
 
-<button type="button" class="btn btn-warning" onClick="myFunction()">Design your own Character</button>
+
+
+<button type="button" class="btn btn-info" onClick="myFunction()">Design your own Character</button>
 <br>
 <div id= "myDIV" style= "display: none;">
 <br>
 <form action="{% url 'created_char' %}" method="POST">
 {% csrf_token %}
-<p>Note! This feature is for more advanced players who do not mind going through all the steps to create a Character from scratch. If you are just looking to grab a Character and go play, please use the random option! If you do not select a value, the default listed value will be used!</p>
+<p class="warning-text">Note! This feature is for more advanced players who do not mind going through all the steps to create a Character from scratch. If you are just looking to grab a Character and go play, please use the random option! If you do not select a value, the default listed value will be used!</p>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Please select your race:</button>
     <select class="custom-select my-1 mr-sm-2" name="race">
@@ -123,18 +126,19 @@
 </div>
 <br>
 <br>
-<a href={% url 'created_char' %}><button type="submit" class="btn btn-success">Roll character using selected settings</button></a>
+<a href={% url 'created_char' %}><button type="submit" class="btn btn-dark">Roll character using selected settings</button></a>
 </form>
 </div>
 <br>
 <br>
 <form action={% url 'verify_data' %} method="POST">
 {% csrf_token %}
-<a href={% url 'verify_data' %}><button type="submit" class="btn btn-primary">Create random character</button></a>
+<a href={% url 'verify_data' %}><button type="submit" class="btn btn-dark">Create random Character</button></a>
 </form>
 <br>
-<a href={% url 'index3' %}><button type="button" class="btn btn-dark">View Previously Created Characters</button></a> 
+<a href={% url 'index3' %}><button type="button" class="btn btn-secondary">View Previously Created Characters</button></a> 
 <br>
+
 <script>
 function myFunction() {
   const x = document.getElementById("myDIV");

@@ -2,7 +2,7 @@
 
 {% block content2 %}
 
-<form>
+<form class="text">
 {% csrf_token %}
 <h1>Your Character:</h1>
 <table>
@@ -18,22 +18,44 @@
         <br>
         <tr>Con: {{char.constitution}}</tr>
         <br>
-        <tr>Int: {{char.intelligence}}</tr>
+        <tr> Int: {{char.intelligence}}</tr>
         <br>
         <tr>Wis: {{char.wisdom}}</tr>
         <br>
         <tr>Cha: {{char.charisma}}</tr>
         <br>
-</tr>
+</th>
 </table>
 
 </form>
 <form action={% url 'verify_data' %} method="POST">
 {% csrf_token %}
-<button type="submit" class="btn btn-primary">Reroll charactor?</button>
+<button type="submit" class="btn btn-secondary">Reroll charactor?</button>
 </form>
-<a href={% url 'index3' %}><button>Save Charactor?</button></a>
-<a href="{% url 'index1' %}"><button>Start Over??</button></a>
 <br>
+<form action={% url 'random_char' %} method="POST">
+{% csrf_token %}
+<input type="hidden" name="race" value="{{char.race}}">
+<input type="hidden" name="classes" value="{{char.classes}}">
+<input type="hidden" name="strength" value="{{char.strength}}">
+<input type="hidden" name="dexterity" value="{{char.dexterity}}">
+<input type="hidden" name="constitution" value="{{char.constitution}}">
+<input type="hidden" name="intelligence" value="{{char.intelligence}}">
+<input type="hidden" name="wisdom" value="{{char.wisdom}}">
+<input type="hidden" name="charisma" value="{{char.charisma}}">
+<button onclick="myFunction()" class="btn btn-secondary">Save Charactor?</button>
+</form>
+<br>
+<a href="{% url 'index1' %}"><button class="btn btn-secondary">Start Over??</button></a>
+<br>
+<br>
+<a href="{% url 'index3' %}"><button class="btn btn-secondary">View currently saved charactors.</button></a>
+
+<script>
+function myFunction() {
+  alert("Character saved to the database.");
+}
+</script>
 
 {% endblock content2 %}
+
