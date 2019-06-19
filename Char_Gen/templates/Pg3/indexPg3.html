@@ -14,16 +14,16 @@
         </tbody>
     </table> {% endcomment %}
 
-    <table>
+    <table class="text">
         <th>
             <ol>
                 {% for char in chars %}
-            <li class="text">{{ char}}</li>
+            <li>{{ char }}</li>
                 {% endfor %}
             </ol>
         </th>
     </table>
     
-        <a href={% url 'index1' %}><button class="btn btn-secondary" >Back to the generator.</button></a>
+        <a href={% url 'index1' %}><button class="btn btn-warning" >Start Over</button></a>
 
     {% endblock content3 %}
