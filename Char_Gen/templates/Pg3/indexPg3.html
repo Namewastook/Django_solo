@@ -1,20 +1,41 @@
 {% extends 'base.html' %}
 
     {% block content3 %}
-    {% comment %} <table>
+
+    <h1 class ="text">The newest saved character is on the right!</h1>
+
+    <table class="text">
         <thead>
             <th>
             </th>
         </thead>
         <tbody>
-            <tr>
-                <td>
+            <tr class="tr">
+            {% for char in chars %}
+                <td class="td">
+                Race: {{char.race}}
+                <br> 
+                Class: {{char.classes}}
+                <br>
+                Str: {{char.strength}}
+                <br>
+                Dex: {{char.dexterity}}
+                <br>
+                Con: {{char.constitution}}
+                <br>
+                Int: {{char.intelligence}}
+                <br>
+                Wis: {{char.wisdom}}
+                <br>
+                Cha: {{char.charisma}}
                 </td>
+            {% endfor %}
             </tr>
         </tbody>
-    </table> {% endcomment %}
+    </table>
 
-    <table class="text">
+
+    {% comment %} <table class="text">
         <th>
             <ol>
                 {% for char in chars %}
@@ -22,8 +43,18 @@
                 {% endfor %}
             </ol>
         </th>
-    </table>
-    
-        <a href={% url 'index1' %}><button class="btn btn-warning" >Start Over</button></a>
+    </table>  {% endcomment %}
+    <br>
+    <a href={% url 'verify_data' %}><button class="btn btn-outline-success" class="Pg3btn">Go Back</button></a>
+    <br>
+    <br>
+    <a href={% url 'index1' %}><button class="btn btn-outline-danger" class="Pg3btn">Start Over</button></a>
+    <br>
+    <br>
+    <a href={% url 'die_roller' %}><button class="btn btn-default">
+     <img src="https://i.pinimg.com/originals/d3/ca/c2/d3cac2ec56e311e7b1c724ce4fabc4c4.jpg" width="50" />
+</button></a>
+
+        
 
     {% endblock content3 %}

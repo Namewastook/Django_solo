@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="text">You rolled a: {{roll}}</h1>
+    <br>
+    <a href="{% url 'die_roller' %}"><button class="btn btn-outline-light">Reroll</button></a>
+    <br>
+    <br>
+    <a href="{% url 'index3' %}"><button class="btn btn-outline-success">Go Back </button></a>
+    <br>
+    <br>
+    <a href="{% url 'index1' %}"><button class="btn btn-outline-danger">Start Over </button></a>
+{% endblock content %}

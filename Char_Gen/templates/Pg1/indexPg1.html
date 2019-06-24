@@ -4,14 +4,14 @@
 {% load static %}
 
 <br>
-<br>
-<button type="button" class="btn btn-info" onClick="myFunction()">Custom Character</button>
+<button type="button" class="btn btn-outline-info" onClick="myFunction()">Custom Character</button>
 <br>
 <div id= "myDIV" style= "display: none;">
 <br>
 <form action="{% url 'created_char' %}" method="POST">
 {% csrf_token %}
-<p class="warning-text">Note! This feature is for more advanced players who wish to create a custom Character. If you are looking for a grab and go Character, please use the random option. If you do not select a value, the default listed value will be used.</p>
+<p class="warning-text">Note! This feature is for more advanced players who wish to create a custom Character. If you are looking for a grab and go Character, please use the random option.</p> 
+<p class="warning-text">If you do not select a value, the default listed value will be used.</p>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Please select your race:</button>
     <select class="custom-select my-1 mr-sm-2" name="race">
@@ -38,90 +38,90 @@
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Str score:</button>
     <select class="custom-select my-1 mr-sm-2" name="strength">
-    <option value="10" selected="selected">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
+    <option value="10 mod +0" selected="selected">10</option>
+    <option value="11 mod +0">11</option>
+    <option value="12 mod +1">12</option>
+    <option value="13 mod +1">13</option>
+    <option value="14 mod +2">14</option>
+    <option value="15 mod +2">15</option>
+    <option value="16 mod +3">16</option>
+    <option value="17 mod +3">17</option>
+    <option value="18 mod +4">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Dex score:</button>
     <select class="custom-select my-1 mr-sm-2" name="dexterity">
-    <option value="10" selected="selected">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
+    <option value="10 mod +0" selected="selected">10</option>
+    <option value="11 mod +0">11</option>
+    <option value="12 mod +1">12</option>
+    <option value="13 mod +1">13</option>
+    <option value="14 mod +2">14</option>
+    <option value="15 mod +2">15</option>
+    <option value="16 mod +3">16</option>
+    <option value="17 mod +3">17</option>
+    <option value="18 mod +4">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Con score:</button>
     <select class="custom-select my-1 mr-sm-2" name="constitution">
-    <option value="10" selected="selected">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
+    <option value="10 mod +0" selected="selected">10</option>
+    <option value="11 mod +0">11</option>
+    <option value="12 mod +1">12</option>
+    <option value="13 mod +1">13</option>
+    <option value="14 mod +2">14</option>
+    <option value="15 mod +2">15</option>
+    <option value="16 mod +3">16</option>
+    <option value="17 mod +3">17</option>
+    <option value="18 mod +4">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Int score:</button>
     <select class="custom-select my-1 mr-sm-2" name="intelligence">
-    <option value="10" selected="selected">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
+    <option value="10 mod +0" selected="selected">10</option>
+    <option value="11 mod +0">11</option>
+    <option value="12 mod +1">12</option>
+    <option value="13 mod +1">13</option>
+    <option value="14 mod +2">14</option>
+    <option value="15 mod +2">15</option>
+    <option value="16 mod +3">16</option>
+    <option value="17 mod +3">17</option>
+    <option value="18 mod +4">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Wis score:</button>
     <select class="custom-select my-1 mr-sm-2" name="wisdom">
-    <option value="10" selected="selected">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
+    <option value="10 mod +0" selected="selected">10</option>
+    <option value="11 mod +0">11</option>
+    <option value="12 mod +1">12</option>
+    <option value="13 mod +1">13</option>
+    <option value="14 mod +2">14</option>
+    <option value="15 mod +2">15</option>
+    <option value="16 mod +3">16</option>
+    <option value="17 mod +3">17</option>
+    <option value="18 mod +4">18</option>
   </select>
 </div>
 <br>
 <div class="btn-group dropright">
   <button type="button" class="disabled" class="btn btn-primary">Cha score:</button>
     <select class="custom-select my-1 mr-sm-2" name="charisma">
-    <option value="10" selected="selected">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-    <option value="16">16</option>
-    <option value="17">17</option>
-    <option value="18">18</option>
+    <option value="10 mod +0" selected="selected">10</option>
+    <option value="11 mod +0">11</option>
+    <option value="12 mod +1">12</option>
+    <option value="13 mod +1">13</option>
+    <option value="14 mod +2">14</option>
+    <option value="15 mod +2">15</option>
+    <option value="16 mod +3">16</option>
+    <option value="17 mod +3">17</option>
+    <option value="18 mod +4">18</option>
   </select>
 </div>
 <br>
@@ -133,11 +133,11 @@
 <br>
 <form action={% url 'verify_data' %} method="POST">
 {% csrf_token %}
-<a href={% url 'verify_data' %}><button type="submit" class="btn btn-dark">Random Character</button></a>
+<a href={% url 'verify_data' %}><button type="submit" class="btn btn-outline-light">Random Character</button></a>
 </form>
 <br>
 <br>
-<a href={% url 'index3' %}><button type="button" class="btn btn-secondary">View Saved Characters</button></a> 
+<a href={% url 'index3' %}><button type="button" class="btn btn-outline-secondary">View Saved Characters</button></a> 
 <br>
 
 <script>
